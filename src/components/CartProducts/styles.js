@@ -37,6 +37,10 @@ const CartProductsCard = styled.div`
     color: black;
     width: 100%;
   }
+
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
 `;
 
 export default CartProductsCard;

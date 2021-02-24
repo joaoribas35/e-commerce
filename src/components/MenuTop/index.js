@@ -63,19 +63,19 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create("width"),
     width: "100%",
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up("xs")]: {
       width: "20ch",
     },
   },
   sectionDesktop: {
     display: "none",
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up("xs")]: {
       display: "flex",
     },
   },
   sectionMobile: {
     display: "flex",
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up("xs")]: {
       display: "none",
     },
   },
@@ -166,6 +166,7 @@ export default function MenuTop() {
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
+            onClick={() => history.push("/")}
           >
             <MenuIcon />
           </IconButton>
