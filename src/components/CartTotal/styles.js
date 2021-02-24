@@ -8,12 +8,25 @@ const CartTotalCard = styled.div`
   margin: 10px;
   border-radius: 8px;
 
+  img {
+    max-height: 150px;
+    object-fit: contain;
+  }
+
   p {
     font-size: 0.75rem;
   }
 
+  h2 {
+    font-size: 0.95rem;
+  }
+
+  h3 {
+    font-size: 0.85rem;
+  }
+
   button {
-    background-color: blue;
+    font-size: 0.75rem;
   }
 `;
 

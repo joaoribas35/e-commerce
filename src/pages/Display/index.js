@@ -1,12 +1,13 @@
-import ProductList from "../../ProductList";
-
 import DisplayCard from "./styles";
 import DisplayProducts from "../../components/DisplayProducts";
+import { useSelector } from "react-redux";
 
 const ProductDisplay = () => {
+  const products = useSelector((state) => state.products);
+
   return (
     <DisplayCard>
-      {ProductList.map((product, i) => (
+      {products.map((product, i) => (
         <DisplayProducts key={i} product={product} />
       ))}
     </DisplayCard>

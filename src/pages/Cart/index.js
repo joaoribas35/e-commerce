@@ -1,5 +1,4 @@
-import ProductList from "../../ProductList";
-
+import DisplayCart from "./styles";
 import CartProducts from "../../components/CartProducts";
 import CartTotal from "../../components/CartTotal";
 
@@ -7,11 +6,11 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    margin: 30,
   },
   paper: {
     padding: theme.spacing(2),
@@ -22,13 +21,14 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Cart() {
   const classes = useStyles();
+  const cart = useSelector((state) => state.cart);
 
   return (
-    <div className={classes.root}>
+    <DisplayCart className={classes.root}>
       <Grid container spacing={3}>
         <Grid item xs={8}>
           <Paper className={classes.paper}>
-            {ProductList.map((product, i) => (
+            {cart.map((product, i) => (
               <CartProducts key={i} product={product} />
             ))}
           </Paper>
@@ -39,6 +39,6 @@ export default function Cart() {
           </Paper>
         </Grid>
       </Grid>
-    </div>
+    </DisplayCart>
   );
 }

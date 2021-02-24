@@ -4,7 +4,8 @@ const DisplayCard = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 30px;
+  align-items: center;
+  padding: 20px;
 `;
 
 export default DisplayCard;

@@ -2,11 +2,9 @@ import styled from "styled-components";
 
 const DisplayCart = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 80%;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 30px;
+  margin: auto;
+  padding: 20px;
+  width: 60%;
 `;
 
 export default DisplayCart;

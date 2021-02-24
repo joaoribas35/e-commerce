@@ -15,6 +15,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -83,6 +84,8 @@ const useStyles = makeStyles((theme) => ({
 export default function MenuTop() {
   const history = useHistory();
 
+  const cart = useSelector((state) => state.cart);
+
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -145,7 +148,7 @@ export default function MenuTop() {
 
       <MenuItem onClick={() => history.push("/Cart")}>
         <IconButton aria-label="show 11 items in cart" color="inherit">
-          <Badge badgeContent={11} color="secondary">
+          <Badge badgeContent={cart.length} color="secondary">
             <ShoppingCartIcon />
           </Badge>
         </IconButton>
@@ -191,7 +194,7 @@ export default function MenuTop() {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
+              <Badge badgeContent={cart.length} color="secondary">
                 <ShoppingCartIcon onClick={() => history.push("/Cart")} />
               </Badge>
             </IconButton>
