@@ -1,7 +1,8 @@
 import DisplayProductsCard from "./styles";
 import Button from "@material-ui/core/Button";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../store/modules/cart/actions";
+// import { addToCart } from "../../store/modules/cart/actions";
+import { addToCartThunk } from "../../store/modules/cart/thunks";
 
 const DisplayProducts = ({ product }) => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const DisplayProducts = ({ product }) => {
       <Button
         variant="contained"
         color="primary"
-        onClick={() => dispatch(addToCart(product))}
+        onClick={() => dispatch(addToCartThunk(product))}
       >
         add to cart
       </Button>

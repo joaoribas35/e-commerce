@@ -1,7 +1,8 @@
 import CartProductsCard from "./styles";
 import Button from "@material-ui/core/Button";
-import { removeFromCart } from "../../store/modules/cart/actions";
+// import { removeFromCart } from "../../store/modules/cart/actions";
 import { useDispatch } from "react-redux";
+import { RemoveFromCartThunk } from "../../store/modules/cart/thunks";
 
 const DisplayProducts = ({ product }) => {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const DisplayProducts = ({ product }) => {
         <Button
           variant="contained"
           color="primary"
-          onClick={() => dispatch(removeFromCart(product.id))}
+          onClick={() => dispatch(RemoveFromCartThunk(product.id))}
         >
           remove
         </Button>
